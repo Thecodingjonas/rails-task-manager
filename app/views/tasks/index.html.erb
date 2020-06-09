@@ -1,0 +1,17 @@
+
+<div class="container-task">
+  <h1 id="title" class="my-3" >MY TASKS :</h1>
+
+  <% @tasks.each do |task| %>
+  <h3>
+    <%= check_box "task", "completed", {:checked => task.completed, :disabled => true}%>
+    <%= link_to task.title, task %>
+    <%= link_to task_path(task), method: :delete, data: {confirm: "Are you sure you want to destroy this task?"} do %>
+    <i class="fas fa-trash"></i>
+    <% end %>
+    </h3>
+  <% end %>
+  <br>
+  <br>
+  <p class="btn btn-warning rounded" id="new_task"><%= link_to 'NEW TASK CREATION', task_new_url %></p>
+</div>

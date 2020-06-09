@@ -1,0 +1,16 @@
+
+<div class="container-show my-4">
+  <h1 id="title">WHATU GOT TO DO : </h1>
+  <h1 class="to-do"><%= @task.title %></h1>
+
+  <h2 class="to-do"><%= @task.details %></h2>
+  <% if @task.completed == true %>
+    <h3 class="done"><%= check_box "task", "completed"%>You actually f***** did it</h3>
+  <% else %>
+    <h3 class="done"><%= check_box "task", "completed"%>Not yet completed, need more effort</h3>
+  <% end %>
+
+  <p class="btn btn-warning rounded"><%= link_to 'back home', tasks_url %></p>
+  <br>
+  <p id="edit"><%= link_to 'EDIT', task_edit_url %></p>
+</div>
